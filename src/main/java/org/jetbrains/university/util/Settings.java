@@ -5,6 +5,7 @@ import org.apache.commons.cli.*;
 public class Settings {
     private String address;
     private String channelName;
+    private String userName;
 
     public Settings(String[] args) {
         CommandLineParser parser = new DefaultParser();
@@ -17,8 +18,9 @@ public class Settings {
 
             address = parsed.getOptionValue(CliMessages.SERVER_OPT);
             channelName = parsed.getOptionValue(CliMessages.CHANNEL_OPT);
+            userName = parsed.getOptionValue(CliMessages.USERNAME_OPT);
 
-            if (address == null || channelName == null) {
+            if (address == null || channelName == null || userName == null) {
                 printHelpAndExit();
             }
         } catch (ParseException | NumberFormatException e) {
@@ -37,5 +39,9 @@ public class Settings {
 
     public String getChannelName() {
         return channelName;
+    }
+
+    public String getUserName() {
+        return userName;
     }
 }

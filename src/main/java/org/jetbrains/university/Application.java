@@ -3,46 +3,56 @@ package org.jetbrains.university;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.DeliverCallback;
+import org.jetbrains.university.util.ColorPrinter;
+import org.jetbrains.university.util.MailUtils;
+import org.jetbrains.university.util.Settings;
+
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.concurrent.TimeoutException;
+
+import static java.util.logging.Level.INFO;
 
 public class Application {
-    private static final String EXCHANGE_NAME = "logs";
 
-//    public static void main(String[] argv) throws Exception {
-//        ConnectionFactory factory = new ConnectionFactory();
-//        factory.setHost("localhost");
-//        Connection connection = factory.newConnection();
-//        Channel channel = connection.createChannel();
-//
-//        channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
-//        String queueName = channel.queueDeclare().getQueue();
-//        channel.queueBind(queueName, EXCHANGE_NAME, "");
-//
-//        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
-//
-//        DeliverCallback deliverCallback = (consumerTag, delivery) -> {
-//            String message = new String(delivery.getBody(), "UTF-8");
-//            System.out.println(" [x] Received '" + message + "'");
-//        };
-//        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });
-//    }
+    private static final ColorPrinter printer = new ColorPrinter(System.out);
 
-    public static void main(String[] argv) throws Exception {
+    public static void main(String[] args) throws IOException, TimeoutException {
+        Settings settings = new Settings(args);
+
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
-        Connection connection = factory.newConnection();
-        Channel channel = connection.createChannel();
+        factory.setHost(settings.getAddress());
 
-        channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
-        String queueName = channel.queueDeclare().getQueue();
-        channel.queueBind(queueName, EXCHANGE_NAME, "");
+        try (
+                Connection connection = factory.newConnection();
+                Channel channel = connection.createChannel()
+        ) {
+            channel.exchangeDeclare(settings.getChannelName(), "fanout");
 
-        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+            channel.basicConsume(
+                    settings.getChannelName(), true,
+                    (consumerTag, delivery) -> MailUtils.printMail(delivery.getBody(), printer),
+                    consumerTag -> {
+                    }
+            );
 
-        DeliverCallback deliverCallback = (consumerTag, delivery) -> {
-            String message = new String(delivery.getBody(), "UTF-8");
-            System.out.println(" [x] Received '" + message + "'");
-        };
-        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });
+            startReader(channel, settings);
+        }
+    }
+
+    private static void startReader(Channel channel, Settings settings) throws IOException {
+        printer.log(INFO, "[*] connected to " + settings.getChannelName());
+        printer.log(INFO, "[*] To exit type \"exit\" :)");
+
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            String msg = sc.nextLine();
+            if (msg.equals("exit")) {
+                break;
+            }
+
+            channel.basicPublish("", settings.getChannelName(),
+                    null, MailUtils.createMailString(msg, settings));
+        }
     }
 }
