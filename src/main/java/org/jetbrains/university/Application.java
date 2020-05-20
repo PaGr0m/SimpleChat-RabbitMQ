@@ -3,25 +3,46 @@ package org.jetbrains.university;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.DeliverCallback;
 
 public class Application {
     private static final String EXCHANGE_NAME = "logs";
 
+//    public static void main(String[] argv) throws Exception {
+//        ConnectionFactory factory = new ConnectionFactory();
+//        factory.setHost("localhost");
+//        Connection connection = factory.newConnection();
+//        Channel channel = connection.createChannel();
+//
+//        channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
+//        String queueName = channel.queueDeclare().getQueue();
+//        channel.queueBind(queueName, EXCHANGE_NAME, "");
+//
+//        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+//
+//        DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+//            String message = new String(delivery.getBody(), "UTF-8");
+//            System.out.println(" [x] Received '" + message + "'");
+//        };
+//        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });
+//    }
+
     public static void main(String[] argv) throws Exception {
-        System.out.println("Hello SimpleChat-RabbitMQ");
-
-
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
-        try (Connection connection = factory.newConnection();
-             Channel channel = connection.createChannel()) {
-            channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
+        Connection connection = factory.newConnection();
+        Channel channel = connection.createChannel();
 
-            String message = argv.length < 1 ? "info: Hello World!" :
-                             String.join(" ", argv);
+        channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
+        String queueName = channel.queueDeclare().getQueue();
+        channel.queueBind(queueName, EXCHANGE_NAME, "");
 
-            channel.basicPublish(EXCHANGE_NAME, "", null, message.getBytes("UTF-8"));
-            System.out.println(" [x] Sent '" + message + "'");
-        }
+        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+
+        DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+            String message = new String(delivery.getBody(), "UTF-8");
+            System.out.println(" [x] Received '" + message + "'");
+        };
+        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });
     }
 }
