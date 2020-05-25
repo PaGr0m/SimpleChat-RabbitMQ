@@ -43,6 +43,7 @@ public class Application {
                     consumerTag -> { }
             );
 
+            sayHello(channel, settings);
             startReader(channel, settings);
         }
     }
@@ -59,7 +60,13 @@ public class Application {
             }
 
             channel.basicPublish(settings.getChannelName(), settings.getUserName(),
-                    null, MailUtils.createMailString(msg, settings));
+                    null, MailUtils.createMailString(msg, settings, false));
         }
+    }
+
+    private static void sayHello(Channel channel, Settings settings) throws IOException {
+        String msg = String.format("[!] %s joined chat!", settings.getUserName());
+        channel.basicPublish(settings.getChannelName(), settings.getUserName(),
+                null, MailUtils.createMailString(msg, settings, true));
     }
 }

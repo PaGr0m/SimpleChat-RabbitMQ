@@ -17,15 +17,21 @@ public abstract class MailUtils {
         String header = String.format("[%s] %s :",
                 mail.getSender(),
                 sendDate.toString());
-        output.log(Level.SEVERE, header);
-        output.println(mail.getText());
-        output.println("");
+
+        if (mail.getInfo()) {
+            output.log(Level.SEVERE, mail.getText());
+        } else {
+            output.log(Level.SEVERE, header);
+            output.println(mail.getText());
+        }
     }
 
-    public static byte[] createMailString(String message, Settings settings) {
+    public static byte[] createMailString(String message, Settings settings, boolean infoMsg) {
         return Mail.newBuilder().setSender(settings.getUserName())
                 .setSendTime(Timestamp.newBuilder().setSeconds(
                         System.currentTimeMillis() / 1000).build())
-                .setText(message).build().toByteArray();
+                .setText(message)
+                .setInfo(infoMsg)
+                .build().toByteArray();
     }
 }

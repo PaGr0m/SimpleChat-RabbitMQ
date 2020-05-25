@@ -56,6 +56,12 @@ public final class MailOuterClass {
      */
     com.google.protobuf.ByteString
         getTextBytes();
+
+    /**
+     * <code>bool info = 4;</code>
+     * @return The info.
+     */
+    boolean getInfo();
   }
   /**
    * Protobuf type {@code org.jetbrains.university.generated.Mail}
@@ -127,6 +133,11 @@ public final class MailOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               text_ = s;
+              break;
+            }
+            case 32: {
+
+              info_ = input.readBool();
               break;
             }
             default: {
@@ -256,6 +267,16 @@ public final class MailOuterClass {
       }
     }
 
+    public static final int INFO_FIELD_NUMBER = 4;
+    private boolean info_;
+    /**
+     * <code>bool info = 4;</code>
+     * @return The info.
+     */
+    public boolean getInfo() {
+      return info_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -279,6 +300,9 @@ public final class MailOuterClass {
       if (!getTextBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, text_);
       }
+      if (info_ != false) {
+        output.writeBool(4, info_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -297,6 +321,10 @@ public final class MailOuterClass {
       }
       if (!getTextBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, text_);
+      }
+      if (info_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, info_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -322,6 +350,8 @@ public final class MailOuterClass {
       }
       if (!getText()
           .equals(other.getText())) return false;
+      if (getInfo()
+          != other.getInfo()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -341,6 +371,9 @@ public final class MailOuterClass {
       }
       hash = (37 * hash) + TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getText().hashCode();
+      hash = (37 * hash) + INFO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getInfo());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -484,6 +517,8 @@ public final class MailOuterClass {
         }
         text_ = "";
 
+        info_ = false;
+
         return this;
       }
 
@@ -517,6 +552,7 @@ public final class MailOuterClass {
           result.sendTime_ = sendTimeBuilder_.build();
         }
         result.text_ = text_;
+        result.info_ = info_;
         onBuilt();
         return result;
       }
@@ -575,6 +611,9 @@ public final class MailOuterClass {
         if (!other.getText().isEmpty()) {
           text_ = other.text_;
           onChanged();
+        }
+        if (other.getInfo() != false) {
+          setInfo(other.getInfo());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -875,6 +914,36 @@ public final class MailOuterClass {
         onChanged();
         return this;
       }
+
+      private boolean info_ ;
+      /**
+       * <code>bool info = 4;</code>
+       * @return The info.
+       */
+      public boolean getInfo() {
+        return info_;
+      }
+      /**
+       * <code>bool info = 4;</code>
+       * @param value The info to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfo(boolean value) {
+        
+        info_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool info = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInfo() {
+        
+        info_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -944,9 +1013,9 @@ public final class MailOuterClass {
     java.lang.String[] descriptorData = {
       "\n\nMail.proto\022\"org.jetbrains.university.g" +
       "enerated\032\037google/protobuf/timestamp.prot" +
-      "o\"R\n\004Mail\022\016\n\006sender\030\001 \001(\t\022,\n\010sendTime\030\002 " +
+      "o\"`\n\004Mail\022\016\n\006sender\030\001 \001(\t\022,\n\010sendTime\030\002 " +
       "\001(\0132\032.google.protobuf.Timestamp\022\014\n\004text\030" +
-      "\003 \001(\tb\006proto3"
+      "\003 \001(\t\022\014\n\004info\030\004 \001(\010b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -958,7 +1027,7 @@ public final class MailOuterClass {
     internal_static_org_jetbrains_university_generated_Mail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_jetbrains_university_generated_Mail_descriptor,
-        new java.lang.String[] { "Sender", "SendTime", "Text", });
+        new java.lang.String[] { "Sender", "SendTime", "Text", "Info", });
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

@@ -8,4 +8,5 @@ message Mail {
   string sender = 1;
   google.protobuf.Timestamp sendTime = 2;
   string text = 3;
+  bool info = 4;
 }
