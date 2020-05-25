@@ -2,10 +2,15 @@ package org.jetbrains.university.util;
 
 import org.apache.commons.cli.*;
 
+import java.util.Optional;
+
+import static org.jetbrains.university.util.CliMessages.*;
+
 public class Settings {
     private String address;
     private String channelName;
     private String userName;
+    private Optional<Integer> port;
 
     public Settings(String[] args) {
         CommandLineParser parser = new DefaultParser();
@@ -16,13 +21,15 @@ public class Settings {
                 printHelpAndExit();
             }
 
-            address = parsed.getOptionValue(CliMessages.SERVER_OPT);
-            channelName = parsed.getOptionValue(CliMessages.CHANNEL_OPT);
-            userName = parsed.getOptionValue(CliMessages.USERNAME_OPT);
+            address = parsed.getOptionValue(SERVER_OPT);
+            channelName = parsed.getOptionValue(CHANNEL_OPT);
+            userName = parsed.getOptionValue(USERNAME_OPT);
+            port = Optional.ofNullable(parsed.getOptionValue(PORT_OPT)).map(Integer::parseInt);
 
             if (address == null || channelName == null || userName == null) {
                 printHelpAndExit();
             }
+
         } catch (ParseException | NumberFormatException e) {
             printHelpAndExit();
         }
@@ -43,5 +50,9 @@ public class Settings {
 
     public String getUserName() {
         return userName;
+    }
+
+    public Optional<Integer> getPort() {
+        return port;
     }
 }

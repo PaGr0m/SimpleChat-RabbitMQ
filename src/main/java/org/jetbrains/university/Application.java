@@ -23,6 +23,7 @@ public class Application {
 
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(settings.getAddress());
+        settings.getPort().ifPresent(factory::setPort);
 
         try (
                 Connection connection = factory.newConnection();
