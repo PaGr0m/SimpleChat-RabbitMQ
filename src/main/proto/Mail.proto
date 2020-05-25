@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package org.jetbrains.university.generated;
+
+import "google/protobuf/timestamp.proto";
+
+message Mail {
+  string sender = 1;
+  google.protobuf.Timestamp sendTime = 2;
+  string text = 3;
+  bool info = 4;
+}

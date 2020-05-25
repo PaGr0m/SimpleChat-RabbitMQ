@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id "com.google.protobuf" version "0.8.12"
+}
+
+group 'org.jetbrains.university'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.grpc:grpc-protobuf:1.29.0'
+
+    implementation 'com.rabbitmq:amqp-client:5.9.0'
+    implementation 'commons-cli:commons-cli:1.4'
+    compile 'org.apache.cassandra:cassandra-all:0.8.1'
+
+    compileOnly 'org.jetbrains:annotations:16.0.2'
+    testCompile 'junit:junit:4.12'
+}
+
+
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.11.4"
+    }
+    generatedFilesBaseDir = "$projectDir/src/"
+}
