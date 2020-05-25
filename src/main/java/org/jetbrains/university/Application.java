@@ -40,7 +40,8 @@ public class Application {
                             MailUtils.printMail(delivery.getBody(), printer);
                         }
                     },
-                    consumerTag -> { }
+                    consumerTag -> {
+                    }
             );
 
             sayHello(channel, settings);
@@ -54,7 +55,7 @@ public class Application {
         printer.log(INFO, "[*] To exit type \"exit\" :)");
 
         Scanner sc = new Scanner(System.in);
-        while (true) {
+        while (sc.hasNextLine()) {
             String msg = sc.nextLine();
             if (msg.equals("exit")) {
                 break;

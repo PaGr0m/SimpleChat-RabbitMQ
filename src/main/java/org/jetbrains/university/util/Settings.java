@@ -10,7 +10,8 @@ public class Settings {
     private String address;
     private String channelName;
     private String userName;
-    private Optional<Integer> port;
+    private @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
+    Optional<Integer> port;
 
     public Settings(String[] args) {
         CommandLineParser parser = new DefaultParser();
