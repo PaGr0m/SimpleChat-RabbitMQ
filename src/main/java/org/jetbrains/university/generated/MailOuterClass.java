@@ -4,1045 +4,963 @@
 package org.jetbrains.university.generated;
 
 public final class MailOuterClass {
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_jetbrains_university_generated_Mail_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_org_jetbrains_university_generated_Mail_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.FileDescriptor
-            descriptor;
+  private MailOuterClass() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    static {
-        java.lang.String[] descriptorData = {
-                "\n\nMail.proto\022\"org.jetbrains.university.g" +
-                        "enerated\032\037google/protobuf/timestamp.prot" +
-                        "o\"R\n\004Mail\022\016\n\006sender\030\001 \001(\t\022,\n\010sendTime\030\002 " +
-                        "\001(\0132\032.google.protobuf.Timestamp\022\014\n\004text\030" +
-                        "\003 \001(\tb\006proto3"
-        };
-        descriptor = com.google.protobuf.Descriptors.FileDescriptor
-                .internalBuildGeneratedFileFrom(descriptorData,
-                        new com.google.protobuf.Descriptors.FileDescriptor[]{
-                                com.google.protobuf.TimestampProto.getDescriptor(),
-                        });
-        internal_static_org_jetbrains_university_generated_Mail_descriptor =
-                getDescriptor().getMessageTypes().get(0);
-        internal_static_org_jetbrains_university_generated_Mail_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_org_jetbrains_university_generated_Mail_descriptor,
-                new java.lang.String[]{"Sender", "SendTime", "Text",});
-        com.google.protobuf.TimestampProto.getDescriptor();
-    }
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface MailOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:org.jetbrains.university.generated.Mail)
+      com.google.protobuf.MessageOrBuilder {
 
-    private MailOuterClass() {
-    }
-
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistryLite registry) {
-    }
-
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions(
-                (com.google.protobuf.ExtensionRegistryLite) registry);
-    }
-
-    public static com.google.protobuf.Descriptors.FileDescriptor
-    getDescriptor() {
-        return descriptor;
-    }
-
-    public interface MailOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:org.jetbrains.university.generated.Mail)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>string sender = 1;</code>
-         *
-         * @return The sender.
-         */
-        java.lang.String getSender();
-
-        /**
-         * <code>string sender = 1;</code>
-         *
-         * @return The bytes for sender.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>string sender = 1;</code>
+     * @return The sender.
+     */
+    java.lang.String getSender();
+    /**
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
+     */
+    com.google.protobuf.ByteString
         getSenderBytes();
 
-        /**
-         * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-         *
-         * @return Whether the sendTime field is set.
-         */
-        boolean hasSendTime();
+    /**
+     * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+     * @return Whether the sendTime field is set.
+     */
+    boolean hasSendTime();
+    /**
+     * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+     * @return The sendTime.
+     */
+    com.google.protobuf.Timestamp getSendTime();
+    /**
+     * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder();
 
-        /**
-         * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-         *
-         * @return The sendTime.
-         */
-        com.google.protobuf.Timestamp getSendTime();
-
-        /**
-         * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-         */
-        com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder();
-
-        /**
-         * <code>string text = 3;</code>
-         *
-         * @return The text.
-         */
-        java.lang.String getText();
-
-        /**
-         * <code>string text = 3;</code>
-         *
-         * @return The bytes for text.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>string text = 3;</code>
+     * @return The text.
+     */
+    java.lang.String getText();
+    /**
+     * <code>string text = 3;</code>
+     * @return The bytes for text.
+     */
+    com.google.protobuf.ByteString
         getTextBytes();
+  }
+  /**
+   * Protobuf type {@code org.jetbrains.university.generated.Mail}
+   */
+  public  static final class Mail extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:org.jetbrains.university.generated.Mail)
+      MailOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Mail.newBuilder() to construct.
+    private Mail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Mail() {
+      sender_ = "";
+      text_ = "";
     }
 
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Mail();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Mail(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sender_ = s;
+              break;
+            }
+            case 18: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (sendTime_ != null) {
+                subBuilder = sendTime_.toBuilder();
+              }
+              sendTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sendTime_);
+                sendTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              text_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.jetbrains.university.generated.MailOuterClass.internal_static_org_jetbrains_university_generated_Mail_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.jetbrains.university.generated.MailOuterClass.internal_static_org_jetbrains_university_generated_Mail_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.jetbrains.university.generated.MailOuterClass.Mail.class, org.jetbrains.university.generated.MailOuterClass.Mail.Builder.class);
+    }
+
+    public static final int SENDER_FIELD_NUMBER = 1;
+    private volatile java.lang.Object sender_;
+    /**
+     * <code>string sender = 1;</code>
+     * @return The sender.
+     */
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sender = 1;</code>
+     * @return The bytes for sender.
+     */
+    public com.google.protobuf.ByteString
+        getSenderBytes() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SENDTIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp sendTime_;
+    /**
+     * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+     * @return Whether the sendTime field is set.
+     */
+    public boolean hasSendTime() {
+      return sendTime_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+     * @return The sendTime.
+     */
+    public com.google.protobuf.Timestamp getSendTime() {
+      return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder() {
+      return getSendTime();
+    }
+
+    public static final int TEXT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object text_;
+    /**
+     * <code>string text = 3;</code>
+     * @return The text.
+     */
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        text_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string text = 3;</code>
+     * @return The bytes for text.
+     */
+    public com.google.protobuf.ByteString
+        getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getSenderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sender_);
+      }
+      if (sendTime_ != null) {
+        output.writeMessage(2, getSendTime());
+      }
+      if (!getTextBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, text_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getSenderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sender_);
+      }
+      if (sendTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSendTime());
+      }
+      if (!getTextBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, text_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.jetbrains.university.generated.MailOuterClass.Mail)) {
+        return super.equals(obj);
+      }
+      org.jetbrains.university.generated.MailOuterClass.Mail other = (org.jetbrains.university.generated.MailOuterClass.Mail) obj;
+
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (hasSendTime() != other.hasSendTime()) return false;
+      if (hasSendTime()) {
+        if (!getSendTime()
+            .equals(other.getSendTime())) return false;
+      }
+      if (!getText()
+          .equals(other.getText())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SENDER_FIELD_NUMBER;
+      hash = (53 * hash) + getSender().hashCode();
+      if (hasSendTime()) {
+        hash = (37 * hash) + SENDTIME_FIELD_NUMBER;
+        hash = (53 * hash) + getSendTime().hashCode();
+      }
+      hash = (37 * hash) + TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getText().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.jetbrains.university.generated.MailOuterClass.Mail prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code org.jetbrains.university.generated.Mail}
      */
-    public static final class Mail extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:org.jetbrains.university.generated.Mail)
-            MailOrBuilder {
-        public static final int SENDER_FIELD_NUMBER = 1;
-        public static final int SENDTIME_FIELD_NUMBER = 2;
-        public static final int TEXT_FIELD_NUMBER = 3;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:org.jetbrains.university.generated.Mail)
-        private static final org.jetbrains.university.generated.MailOuterClass.Mail DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<Mail>
-                PARSER = new com.google.protobuf.AbstractParser<Mail>() {
-            @java.lang.Override
-            public Mail parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Mail(input, extensionRegistry);
-            }
-        };
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:org.jetbrains.university.generated.Mail)
+        org.jetbrains.university.generated.MailOuterClass.MailOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.jetbrains.university.generated.MailOuterClass.internal_static_org_jetbrains_university_generated_Mail_descriptor;
+      }
 
-        static {
-            DEFAULT_INSTANCE = new org.jetbrains.university.generated.MailOuterClass.Mail();
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.jetbrains.university.generated.MailOuterClass.internal_static_org_jetbrains_university_generated_Mail_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.jetbrains.university.generated.MailOuterClass.Mail.class, org.jetbrains.university.generated.MailOuterClass.Mail.Builder.class);
+      }
+
+      // Construct using org.jetbrains.university.generated.MailOuterClass.Mail.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        sender_ = "";
+
+        if (sendTimeBuilder_ == null) {
+          sendTime_ = null;
+        } else {
+          sendTime_ = null;
+          sendTimeBuilder_ = null;
+        }
+        text_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.jetbrains.university.generated.MailOuterClass.internal_static_org_jetbrains_university_generated_Mail_descriptor;
+      }
+
+      @java.lang.Override
+      public org.jetbrains.university.generated.MailOuterClass.Mail getDefaultInstanceForType() {
+        return org.jetbrains.university.generated.MailOuterClass.Mail.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.jetbrains.university.generated.MailOuterClass.Mail build() {
+        org.jetbrains.university.generated.MailOuterClass.Mail result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.jetbrains.university.generated.MailOuterClass.Mail buildPartial() {
+        org.jetbrains.university.generated.MailOuterClass.Mail result = new org.jetbrains.university.generated.MailOuterClass.Mail(this);
+        result.sender_ = sender_;
+        if (sendTimeBuilder_ == null) {
+          result.sendTime_ = sendTime_;
+        } else {
+          result.sendTime_ = sendTimeBuilder_.build();
+        }
+        result.text_ = text_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.jetbrains.university.generated.MailOuterClass.Mail) {
+          return mergeFrom((org.jetbrains.university.generated.MailOuterClass.Mail)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.jetbrains.university.generated.MailOuterClass.Mail other) {
+        if (other == org.jetbrains.university.generated.MailOuterClass.Mail.getDefaultInstance()) return this;
+        if (!other.getSender().isEmpty()) {
+          sender_ = other.sender_;
+          onChanged();
+        }
+        if (other.hasSendTime()) {
+          mergeSendTime(other.getSendTime());
+        }
+        if (!other.getText().isEmpty()) {
+          text_ = other.text_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.jetbrains.university.generated.MailOuterClass.Mail parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.jetbrains.university.generated.MailOuterClass.Mail) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object sender_ = "";
+      /**
+       * <code>string sender = 1;</code>
+       * @return The sender.
+       */
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sender_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sender = 1;</code>
+       * @return The bytes for sender.
+       */
+      public com.google.protobuf.ByteString
+          getSenderBytes() {
+        java.lang.Object ref = sender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sender = 1;</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSender(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sender = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSender() {
+        
+        sender_ = getDefaultInstance().getSender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sender = 1;</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp sendTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> sendTimeBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+       * @return Whether the sendTime field is set.
+       */
+      public boolean hasSendTime() {
+        return sendTimeBuilder_ != null || sendTime_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+       * @return The sendTime.
+       */
+      public com.google.protobuf.Timestamp getSendTime() {
+        if (sendTimeBuilder_ == null) {
+          return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
+        } else {
+          return sendTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+       */
+      public Builder setSendTime(com.google.protobuf.Timestamp value) {
+        if (sendTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sendTime_ = value;
+          onChanged();
+        } else {
+          sendTimeBuilder_.setMessage(value);
         }
 
-        private volatile java.lang.Object sender_;
-        private com.google.protobuf.Timestamp sendTime_;
-        private volatile java.lang.Object text_;
-        private byte memoizedIsInitialized = -1;
-
-        // Use Mail.newBuilder() to construct.
-        private Mail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+       */
+      public Builder setSendTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (sendTimeBuilder_ == null) {
+          sendTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          sendTimeBuilder_.setMessage(builderForValue.build());
         }
 
-        private Mail() {
-            sender_ = "";
-            text_ = "";
-        }
-        private Mail(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 10: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            sender_ = s;
-                            break;
-                        }
-                        case 18: {
-                            com.google.protobuf.Timestamp.Builder subBuilder = null;
-                            if (sendTime_ != null) {
-                                subBuilder = sendTime_.toBuilder();
-                            }
-                            sendTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(sendTime_);
-                                sendTime_ = subBuilder.buildPartial();
-                            }
-
-                            break;
-                        }
-                        case 26: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            text_ = s;
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownField(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+       */
+      public Builder mergeSendTime(com.google.protobuf.Timestamp value) {
+        if (sendTimeBuilder_ == null) {
+          if (sendTime_ != null) {
+            sendTime_ =
+              com.google.protobuf.Timestamp.newBuilder(sendTime_).mergeFrom(value).buildPartial();
+          } else {
+            sendTime_ = value;
+          }
+          onChanged();
+        } else {
+          sendTimeBuilder_.mergeFrom(value);
         }
 
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.jetbrains.university.generated.MailOuterClass.internal_static_org_jetbrains_university_generated_Mail_descriptor;
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+       */
+      public Builder clearSendTime() {
+        if (sendTimeBuilder_ == null) {
+          sendTime_ = null;
+          onChanged();
+        } else {
+          sendTime_ = null;
+          sendTimeBuilder_ = null;
         }
 
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getSendTimeBuilder() {
+        
+        onChanged();
+        return getSendTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder() {
+        if (sendTimeBuilder_ != null) {
+          return sendTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return sendTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
         }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <code>.google.protobuf.Timestamp sendTime = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getSendTimeFieldBuilder() {
+        if (sendTimeBuilder_ == null) {
+          sendTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getSendTime(),
+                  getParentForChildren(),
+                  isClean());
+          sendTime_ = null;
         }
+        return sendTimeBuilder_;
+      }
 
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      private java.lang.Object text_ = "";
+      /**
+       * <code>string text = 3;</code>
+       * @return The text.
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          text_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <code>string text = 3;</code>
+       * @return The bytes for text.
+       */
+      public com.google.protobuf.ByteString
+          getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(org.jetbrains.university.generated.MailOuterClass.Mail prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        public static org.jetbrains.university.generated.MailOuterClass.Mail getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<Mail> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(
-                UnusedPrivateParameter unused) {
-            return new Mail();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.jetbrains.university.generated.MailOuterClass.internal_static_org_jetbrains_university_generated_Mail_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.jetbrains.university.generated.MailOuterClass.Mail.class, org.jetbrains.university.generated.MailOuterClass.Mail.Builder.class);
-        }
-
-        /**
-         * <code>string sender = 1;</code>
-         *
-         * @return The sender.
-         */
-        public java.lang.String getSender() {
-            java.lang.Object ref = sender_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                sender_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string sender = 1;</code>
-         *
-         * @return The bytes for sender.
-         */
-        public com.google.protobuf.ByteString
-        getSenderBytes() {
-            java.lang.Object ref = sender_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                sender_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-         *
-         * @return Whether the sendTime field is set.
-         */
-        public boolean hasSendTime() {
-            return sendTime_ != null;
-        }
-
-        /**
-         * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-         *
-         * @return The sendTime.
-         */
-        public com.google.protobuf.Timestamp getSendTime() {
-            return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
-        }
-
-        /**
-         * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-         */
-        public com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder() {
-            return getSendTime();
-        }
-
-        /**
-         * <code>string text = 3;</code>
-         *
-         * @return The text.
-         */
-        public java.lang.String getText() {
-            java.lang.Object ref = text_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                text_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string text = 3;</code>
-         *
-         * @return The bytes for text.
-         */
-        public com.google.protobuf.ByteString
-        getTextBytes() {
-            java.lang.Object ref = text_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                text_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (!getSenderBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sender_);
-            }
-            if (sendTime_ != null) {
-                output.writeMessage(2, getSendTime());
-            }
-            if (!getTextBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, text_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (!getSenderBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sender_);
-            }
-            if (sendTime_ != null) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(2, getSendTime());
-            }
-            if (!getTextBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, text_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof org.jetbrains.university.generated.MailOuterClass.Mail)) {
-                return super.equals(obj);
-            }
-            org.jetbrains.university.generated.MailOuterClass.Mail other = (org.jetbrains.university.generated.MailOuterClass.Mail) obj;
-
-            if (!getSender()
-                    .equals(other.getSender())) return false;
-            if (hasSendTime() != other.hasSendTime()) return false;
-            if (hasSendTime()) {
-                if (!getSendTime()
-                        .equals(other.getSendTime())) return false;
-            }
-            if (!getText()
-                    .equals(other.getText())) return false;
-            return unknownFields.equals(other.unknownFields);
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + SENDER_FIELD_NUMBER;
-            hash = (53 * hash) + getSender().hashCode();
-            if (hasSendTime()) {
-                hash = (37 * hash) + SENDTIME_FIELD_NUMBER;
-                hash = (53 * hash) + getSendTime().hashCode();
-            }
-            hash = (37 * hash) + TEXT_FIELD_NUMBER;
-            hash = (53 * hash) + getText().hashCode();
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Mail> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public org.jetbrains.university.generated.MailOuterClass.Mail getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code org.jetbrains.university.generated.Mail}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:org.jetbrains.university.generated.Mail)
-                org.jetbrains.university.generated.MailOuterClass.MailOrBuilder {
-            private java.lang.Object sender_ = "";
-            private com.google.protobuf.Timestamp sendTime_;
-            private com.google.protobuf.SingleFieldBuilderV3<
-                    com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> sendTimeBuilder_;
-            private java.lang.Object text_ = "";
-
-            // Construct using org.jetbrains.university.generated.MailOuterClass.Mail.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.jetbrains.university.generated.MailOuterClass.internal_static_org_jetbrains_university_generated_Mail_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.jetbrains.university.generated.MailOuterClass.internal_static_org_jetbrains_university_generated_Mail_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.jetbrains.university.generated.MailOuterClass.Mail.class, org.jetbrains.university.generated.MailOuterClass.Mail.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                sender_ = "";
-
-                if (sendTimeBuilder_ == null) {
-                    sendTime_ = null;
-                } else {
-                    sendTime_ = null;
-                    sendTimeBuilder_ = null;
-                }
-                text_ = "";
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.jetbrains.university.generated.MailOuterClass.internal_static_org_jetbrains_university_generated_Mail_descriptor;
-            }
-
-            @java.lang.Override
-            public org.jetbrains.university.generated.MailOuterClass.Mail getDefaultInstanceForType() {
-                return org.jetbrains.university.generated.MailOuterClass.Mail.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public org.jetbrains.university.generated.MailOuterClass.Mail build() {
-                org.jetbrains.university.generated.MailOuterClass.Mail result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public org.jetbrains.university.generated.MailOuterClass.Mail buildPartial() {
-                org.jetbrains.university.generated.MailOuterClass.Mail result = new org.jetbrains.university.generated.MailOuterClass.Mail(this);
-                result.sender_ = sender_;
-                if (sendTimeBuilder_ == null) {
-                    result.sendTime_ = sendTime_;
-                } else {
-                    result.sendTime_ = sendTimeBuilder_.build();
-                }
-                result.text_ = text_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.jetbrains.university.generated.MailOuterClass.Mail) {
-                    return mergeFrom((org.jetbrains.university.generated.MailOuterClass.Mail) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.jetbrains.university.generated.MailOuterClass.Mail other) {
-                if (other == org.jetbrains.university.generated.MailOuterClass.Mail.getDefaultInstance()) return this;
-                if (!other.getSender().isEmpty()) {
-                    sender_ = other.sender_;
-                    onChanged();
-                }
-                if (other.hasSendTime()) {
-                    mergeSendTime(other.getSendTime());
-                }
-                if (!other.getText().isEmpty()) {
-                    text_ = other.text_;
-                    onChanged();
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.jetbrains.university.generated.MailOuterClass.Mail parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.jetbrains.university.generated.MailOuterClass.Mail) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            /**
-             * <code>string sender = 1;</code>
-             *
-             * @return The sender.
-             */
-            public java.lang.String getSender() {
-                java.lang.Object ref = sender_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    sender_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string sender = 1;</code>
-             *
-             * @param value The sender to set.
-             * @return This builder for chaining.
-             */
-            public Builder setSender(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                sender_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string sender = 1;</code>
-             *
-             * @return The bytes for sender.
-             */
-            public com.google.protobuf.ByteString
-            getSenderBytes() {
-                java.lang.Object ref = sender_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    sender_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string sender = 1;</code>
-             *
-             * @param value The bytes for sender to set.
-             * @return This builder for chaining.
-             */
-            public Builder setSenderBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                sender_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string sender = 1;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearSender() {
-
-                sender_ = getDefaultInstance().getSender();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-             *
-             * @return Whether the sendTime field is set.
-             */
-            public boolean hasSendTime() {
-                return sendTimeBuilder_ != null || sendTime_ != null;
-            }
-
-            /**
-             * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-             *
-             * @return The sendTime.
-             */
-            public com.google.protobuf.Timestamp getSendTime() {
-                if (sendTimeBuilder_ == null) {
-                    return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
-                } else {
-                    return sendTimeBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-             */
-            public Builder setSendTime(com.google.protobuf.Timestamp value) {
-                if (sendTimeBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    sendTime_ = value;
-                    onChanged();
-                } else {
-                    sendTimeBuilder_.setMessage(value);
-                }
-
-                return this;
-            }
-
-            /**
-             * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-             */
-            public Builder setSendTime(
-                    com.google.protobuf.Timestamp.Builder builderForValue) {
-                if (sendTimeBuilder_ == null) {
-                    sendTime_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    sendTimeBuilder_.setMessage(builderForValue.build());
-                }
-
-                return this;
-            }
-
-            /**
-             * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-             */
-            public Builder mergeSendTime(com.google.protobuf.Timestamp value) {
-                if (sendTimeBuilder_ == null) {
-                    if (sendTime_ != null) {
-                        sendTime_ =
-                                com.google.protobuf.Timestamp.newBuilder(sendTime_).mergeFrom(value).buildPartial();
-                    } else {
-                        sendTime_ = value;
-                    }
-                    onChanged();
-                } else {
-                    sendTimeBuilder_.mergeFrom(value);
-                }
-
-                return this;
-            }
-
-            /**
-             * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-             */
-            public Builder clearSendTime() {
-                if (sendTimeBuilder_ == null) {
-                    sendTime_ = null;
-                    onChanged();
-                } else {
-                    sendTime_ = null;
-                    sendTimeBuilder_ = null;
-                }
-
-                return this;
-            }
-
-            /**
-             * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-             */
-            public com.google.protobuf.Timestamp.Builder getSendTimeBuilder() {
-
-                onChanged();
-                return getSendTimeFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-             */
-            public com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder() {
-                if (sendTimeBuilder_ != null) {
-                    return sendTimeBuilder_.getMessageOrBuilder();
-                } else {
-                    return sendTime_ == null ?
-                            com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
-                }
-            }
-
-            /**
-             * <code>.google.protobuf.Timestamp sendTime = 2;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilderV3<
-                    com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>
-            getSendTimeFieldBuilder() {
-                if (sendTimeBuilder_ == null) {
-                    sendTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                            getSendTime(),
-                            getParentForChildren(),
-                            isClean());
-                    sendTime_ = null;
-                }
-                return sendTimeBuilder_;
-            }
-
-            /**
-             * <code>string text = 3;</code>
-             *
-             * @return The text.
-             */
-            public java.lang.String getText() {
-                java.lang.Object ref = text_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    text_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string text = 3;</code>
-             *
-             * @param value The text to set.
-             * @return This builder for chaining.
-             */
-            public Builder setText(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                text_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string text = 3;</code>
-             *
-             * @return The bytes for text.
-             */
-            public com.google.protobuf.ByteString
-            getTextBytes() {
-                java.lang.Object ref = text_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    text_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string text = 3;</code>
-             *
-             * @param value The bytes for text to set.
-             * @return This builder for chaining.
-             */
-            public Builder setTextBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                text_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string text = 3;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearText() {
-
-                text_ = getDefaultInstance().getText();
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:org.jetbrains.university.generated.Mail)
-        }
-
+      }
+      /**
+       * <code>string text = 3;</code>
+       * @param value The text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setText(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        text_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string text = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearText() {
+        
+        text_ = getDefaultInstance().getText();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string text = 3;</code>
+       * @param value The bytes for text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        text_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:org.jetbrains.university.generated.Mail)
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(class_scope:org.jetbrains.university.generated.Mail)
+    private static final org.jetbrains.university.generated.MailOuterClass.Mail DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.jetbrains.university.generated.MailOuterClass.Mail();
+    }
+
+    public static org.jetbrains.university.generated.MailOuterClass.Mail getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Mail>
+        PARSER = new com.google.protobuf.AbstractParser<Mail>() {
+      @java.lang.Override
+      public Mail parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Mail(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Mail> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Mail> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.jetbrains.university.generated.MailOuterClass.Mail getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_jetbrains_university_generated_Mail_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_org_jetbrains_university_generated_Mail_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\nMail.proto\022\"org.jetbrains.university.g" +
+      "enerated\032\037google/protobuf/timestamp.prot" +
+      "o\"R\n\004Mail\022\016\n\006sender\030\001 \001(\t\022,\n\010sendTime\030\002 " +
+      "\001(\0132\032.google.protobuf.Timestamp\022\014\n\004text\030" +
+      "\003 \001(\tb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.TimestampProto.getDescriptor(),
+        });
+    internal_static_org_jetbrains_university_generated_Mail_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_org_jetbrains_university_generated_Mail_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_org_jetbrains_university_generated_Mail_descriptor,
+        new java.lang.String[] { "Sender", "SendTime", "Text", });
+    com.google.protobuf.TimestampProto.getDescriptor();
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }
