@@ -8,8 +8,8 @@ import static org.jetbrains.university.util.CliMessages.*;
 
 public class Settings {
     private String address;
-    private String channelName;
     private String userName;
+    private String channelName;
     private @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     Optional<Integer> port;
 
@@ -30,7 +30,6 @@ public class Settings {
             if (address == null || channelName == null || userName == null) {
                 printHelpAndExit();
             }
-
         } catch (ParseException | NumberFormatException e) {
             printHelpAndExit();
         }

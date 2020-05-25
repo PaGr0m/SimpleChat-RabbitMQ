@@ -9,6 +9,7 @@ public class CliMessages {
     public static final String CHANNEL_OPT = "c";
     public static final String USERNAME_OPT = "u";
     public static final String PORT_OPT = "p";
+
     private static final String SERVER_NAME = "server";
     private static final String CHANNEL_NAME = "channel";
     private static final String USERNAME_NAME = "channel";
@@ -25,6 +26,5 @@ public class CliMessages {
         cliOptions.addOption(PORT_OPT, PORT_NAME, true, PORT_DESCRIPTION);
     }
 
-    private CliMessages() {
-    }
+    private CliMessages() {}
 }

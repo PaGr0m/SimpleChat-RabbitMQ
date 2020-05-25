@@ -25,24 +25,19 @@ public class Application {
         factory.setHost(settings.getAddress());
         settings.getPort().ifPresent(factory::setPort);
 
-        try (
-                Connection connection = factory.newConnection();
-                Channel channel = connection.createChannel()
-        ) {
+        try (Connection connection = factory.newConnection();
+             Channel channel = connection.createChannel()) {
             channel.exchangeDeclare(settings.getChannelName(), BuiltinExchangeType.FANOUT);
             String queueName = channel.queueDeclare().getQueue();
             channel.queueBind(queueName, settings.getChannelName(), settings.getUserName());
-
-            channel.basicConsume(
-                    queueName, true,
-                    (consumerTag, delivery) -> {
-                        if (!delivery.getEnvelope().getRoutingKey().equals(settings.getUserName())) {
-                            MailUtils.printMail(delivery.getBody(), printer);
-                        }
-                    },
-                    consumerTag -> {
-                    }
-            );
+            channel.basicConsume(queueName,
+                                 true,
+                                 (consumerTag, delivery) -> {
+                                     if (!delivery.getEnvelope().getRoutingKey().equals(settings.getUserName())) {
+                                         MailUtils.printMail(delivery.getBody(), printer);
+                                     }
+                                 },
+                                 consumerTag -> {});
 
             sayHello(channel, settings);
             startReader(channel, settings);
@@ -61,8 +56,10 @@ public class Application {
                 break;
             }
 
-            channel.basicPublish(settings.getChannelName(), settings.getUserName(),
-                    null, MailUtils.createMailString(msg, settings, false));
+            channel.basicPublish(settings.getChannelName(),
+                                 settings.getUserName(),
+                                 null,
+                                 MailUtils.createMailString(msg, settings, false));
         }
     }
 
@@ -76,7 +73,9 @@ public class Application {
 
     private static void sayInfo(Channel channel, Settings settings, String what) throws IOException {
         String msg = String.format("[!] %s %s", settings.getUserName(), what);
-        channel.basicPublish(settings.getChannelName(), settings.getUserName(),
-                null, MailUtils.createMailString(msg, settings, true));
+        channel.basicPublish(settings.getChannelName(),
+                             settings.getUserName(),
+                             null,
+                             MailUtils.createMailString(msg, settings, true));
     }
 }
