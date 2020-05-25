@@ -19,7 +19,7 @@ public abstract class MailUtils {
                 sendDate.toString());
 
         if (mail.getInfo()) {
-            output.log(Level.SEVERE, mail.getText());
+            output.log(Level.FINER, mail.getText());
         } else {
             output.log(Level.SEVERE, header);
             output.println(mail.getText());

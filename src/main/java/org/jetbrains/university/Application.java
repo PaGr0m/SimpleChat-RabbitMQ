@@ -45,6 +45,7 @@ public class Application {
 
             sayHello(channel, settings);
             startReader(channel, settings);
+            sayBye(channel, settings);
         }
     }
 
@@ -65,7 +66,15 @@ public class Application {
     }
 
     private static void sayHello(Channel channel, Settings settings) throws IOException {
-        String msg = String.format("[!] %s joined chat!", settings.getUserName());
+        sayInfo(channel, settings, "joined the chat!");
+    }
+
+    private static void sayBye(Channel channel, Settings settings) throws IOException {
+        sayInfo(channel, settings, "left the chat!");
+    }
+
+    private static void sayInfo(Channel channel, Settings settings, String what) throws IOException {
+        String msg = String.format("[!] %s %s", settings.getUserName(), what);
         channel.basicPublish(settings.getChannelName(), settings.getUserName(),
                 null, MailUtils.createMailString(msg, settings, true));
     }

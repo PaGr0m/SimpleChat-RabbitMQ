@@ -22,6 +22,7 @@ public class ColorPrinter {
         color.put(Level.WARNING, ANSI_RED);
         color.put(Level.FINE, ANSI_GREEN);
         color.put(Level.SEVERE, ANSI_YELLOW);
+        color.put(Level.FINER, ANSI_PURPLE);
         color.put(Level.OFF, ANSI_WHITE);
     }
 
